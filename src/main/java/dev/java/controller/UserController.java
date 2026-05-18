@@ -38,4 +38,11 @@ public class UserController {
         return Response.ok(userService.createUsers(users)).build();
     }
 
+    @PUT
+    @Path("/update/{id}")
+    @Transactional
+    public Response updateUser(@PathParam("id") UUID userId, Users users){
+        return Response.ok(userService.updateUser(userId, users)).build();
+    }
+
 }
