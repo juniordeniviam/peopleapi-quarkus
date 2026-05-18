@@ -33,4 +33,9 @@ public class UserService {
         Users.persist(user);
         return user;
     }
+
+    public void deleteUser(UUID userId){
+        var user = findUserById(userId);
+        Users.deleteById(user.id);
+    }
 }
